@@ -20,14 +20,7 @@
       :widgetName="widget.widget"
     >
       <template v-slot:anchor>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'left-top')" class="anchor anchor-left-top"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'right-top')" class="anchor anchor-right-top"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'top')" class="anchor anchor-top"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'left-bottom')" class="anchor anchor-left-bottom"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'bottom')" class="anchor anchor-bottom"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'right-bottom')" class="anchor anchor-right-bottom"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'left')" class="anchor anchor-left"></div>
-        <div draggable="false" @mousedown="changeSizeStart(widget, 'right')" class="anchor anchor-right"></div>
+        <GRStransition :widget="widget"/>
       </template>
     </widget>
   </div>
@@ -36,6 +29,7 @@
 <script lang="ts">
 import draggable from 'vuedraggable'
 import widget from '@/widgets/index.vue'
+import GRStransition from './transition.vue'
 import { defineComponent, computed, ComputedRef, ref, reactive, onMounted, nextTick, watch } from 'vue'
 import { useStore } from 'vuex'
 import { findWidgetByName } from '@/config/index'
@@ -46,6 +40,7 @@ export default defineComponent({
   components: {
     draggable,
     widget,
+    GRStransition,
   },
   setup(_, { emit }) {
     const store = useStore()
@@ -98,10 +93,6 @@ export default defineComponent({
           value: (event.y - position.y - (targetElement.value.clientHeight / 2))
         })
       }
-      // if (targetElement.value) {
-      //   targetElement.value.style.top = (event.y - position.y - (targetElement.value.clientHeight / 2)) + 'px'
-      //   targetElement.value.style.left = (event.x - position.x - (targetElement.value.clientWidth / 2)) + 'px'
-      // }
     }
     const stopMove = (event: MouseEvent) => {
       isMove.value = false
@@ -119,10 +110,6 @@ export default defineComponent({
       console.log(store.state.uuid)
     })
 
-    const changeSizeStart = (widget: widgetConfig, type: string | undefined) => {
-      
-    }
-
     return {
       hoverUUID,
       widgetList,
@@ -133,7 +120,6 @@ export default defineComponent({
       selectWidget,
       selectScreen,
       widgetMoveStart,
-      changeSizeStart,
     }
   }
 })

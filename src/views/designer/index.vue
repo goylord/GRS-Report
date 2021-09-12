@@ -5,7 +5,7 @@
                 <widgets />
             </template>
             <template v-slot:container>
-                <canvasArea />
+                <designer />
             </template>
             <template v-slot:baseInfo>
                 <config />
@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import layout from './components/layout.vue'
 import widgets from './components/widgets.vue'
-import canvasArea from './components/area.vue'
+import designer from './components/designer.vue'
 import config from '@/components/config.vue'
 
 </script>

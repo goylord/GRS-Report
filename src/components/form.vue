@@ -21,7 +21,6 @@ const props = defineProps<{
   defaultValue?: any
 }>()
 const values = ref<any>({})
-console.log('掉了吗')
 onMounted(() => {
   if (typeof props.defaultValue === 'object') {
     Object.keys(props.defaultValue).forEach(key => {
