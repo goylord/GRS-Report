@@ -41,12 +41,12 @@ export default<widgetConfig> {
       configs: [{
         fieldType: 'switch',
         fieldName: '是否显示',
-        fieldCode: 'isShow',
+        fieldCode: 'showTitle',
         defaultValue: false,
       }, {
         fieldType: 'input',
         fieldName: '显示文字',
-        fieldCode: 'title',
+        fieldCode: 'titleText',
         defaultValue: '标题',
       }, {
         fieldType: 'number',
