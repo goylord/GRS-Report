@@ -9,15 +9,25 @@
       </el-tabs>
     </el-aside>
     <el-container>
-      <el-header></el-header>
+      <el-header style="border-bottom: 1px solid #ccc;"></el-header>
       <slot name="container"></slot>
     </el-container>
+    <el-aside class="aside">
+      <el-tabs stretch v-model="rightActiveTab">
+        <el-tab-pane label="信息配置" name="info">
+          <slot name="baseInfo"></slot>
+        </el-tab-pane>
+        <el-tab-pane label="数据配置" name="data">配置管理</el-tab-pane>
+      </el-tabs>
+    </el-aside>
   </el-container>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 let  activeTab = ref('components')
+let  rightActiveTab = ref('info')
+
 </script>
 
 <style lang="less">
@@ -25,6 +35,7 @@ let  activeTab = ref('components')
   height: 100%;
   .aside {
     border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
     height: 100%;
     overflow: hidden auto;
   }

@@ -7,23 +7,18 @@
             <template v-slot:container>
                 <canvasArea />
             </template>
+            <template v-slot:baseInfo>
+                <config />
+            </template>
         </layout>
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import layout from './components/layout.vue'
 import widgets from './components/widgets.vue'
 import canvasArea from './components/area.vue'
-
-export default defineComponent({
-    components: {
-        layout,
-        widgets,
-        canvasArea,
-    }
-})
+import config from '@/components/config.vue'
 
 </script>
  

@@ -1,30 +1,33 @@
 <template>
 	<div class="widgetsContainer">
-		<div class="widget" id="" v-for="widget in widgets" :key="widget.widget" draggable="true" @dragstart="dragStart($event, widget.widget)">
-			<span>{{widget.name}}</span>
+		<div
+			class="widget"
+			v-for="widget in widgets"
+			:key="widget.widget"
+			draggable="true"
+			@dragstart="dragStart($event, widget.widget)"
+		>
+			<span>{{ widget.name }}</span>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { widgets } from '@/config/index'
 
 export default defineComponent({
 	components: {
 	},
 	data() {
 		return {
-			widgets: [{
-				name: '折线图',
-				widget: 'line-charts'
-			}]
+			widgets,
 		}
 	},
 	methods: {
 		dragStart(event: DragEvent, widget: string) {
-			console.log('complete', event)
 			if (event.dataTransfer)
-			event.dataTransfer.setData("widget-code", widget);
+				event.dataTransfer.setData("widget-code", widget);
 		},
 	}
 })
