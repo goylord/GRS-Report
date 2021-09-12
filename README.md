@@ -1,2 +1,10 @@
 # GRS-Report
-Give you a report see see.
+大屏报表工具 （Give you a report see see）
+
+## 如何运行
+ 1. npm install
+ 2. npm run dev
+
+## 联系方式
+* QQ: 805776144
+* 微信: rgs112233
