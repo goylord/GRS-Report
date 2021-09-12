@@ -64,11 +64,13 @@ export default defineComponent({
     const drop = (event: DragEvent) => {
       event.preventDefault();
       const widgetName = event.dataTransfer?.getData("widget-code");
+      if (!widgetName) return
       const widget: widgetConfig = { ...findWidgetByName(widgetName || '') }
       widget.uuid = uuid()
       store.commit('ADD_WIDGET', widget)
       getDefaultValue(widget, store)
       emit('showForm', widget)
+      event.dataTransfer?.setData("widget-code", '');
     }
     const allowDrop = (event: DragEvent) => {
       event.preventDefault();

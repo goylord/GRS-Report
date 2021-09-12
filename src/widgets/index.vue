@@ -1,5 +1,5 @@
 <template>
-  <div class="widget-mask" :style="baseInfoStyle">
+  <div draggable="false" class="widget-mask" :style="baseInfoStyle">
     <component :is="getComponent(widgetName)" :uuid="uuid"></component>
     <slot name="anchor"></slot>
   </div>

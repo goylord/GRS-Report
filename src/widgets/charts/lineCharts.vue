@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { onMounted, reactive, nextTick, defineProps } from "vue";
+import { onMounted, reactive, nextTick, defineProps, watch } from "vue";
+import { useStore } from 'vuex'
 import * as echarts from "echarts";
 const props = defineProps<{
   uuid: string
 }>()
+const store = useStore()
 onMounted(() => {
   const options = reactive({
     xAxis: {
@@ -27,7 +29,10 @@ onMounted(() => {
     if (chartDom) {
       const myChart = echarts.init(chartDom);
       myChart.setOption(options);
-      chartDom.addEventListener("resize", () => {
+      watch(() => store.state.widgetConfig[props.uuid].height, () => {
+        myChart.resize()
+      })
+      watch(() => store.state.widgetConfig[props.uuid].width, () => {
         myChart.resize()
       })
     }
