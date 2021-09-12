@@ -16,6 +16,7 @@
 import GRSForm from './form.vue'
 import { ref, reactive, watch, nextTick } from 'vue'
 import { useStore } from 'vuex'
+import { screenGlobalConfig } from '@/config/index'
 
 const activeNames = ref(0)
 
@@ -38,10 +39,15 @@ watch(() => store.state.uuid, (value) => {
   if (value && store.state.widgetConfig[value]) {
     defaultValue.value = store.state.widgetConfig[value]
   }
+
+  if (!value) {
+    configs.value = screenGlobalConfig.baseInfo
+    defaultValue.value = store.state.screenConfig
+  }
+
   refresh.value = true
   nextTick(() => {
     refresh.value = false
-    console.log('什么鬼', defaultValue)
   })
 })
 

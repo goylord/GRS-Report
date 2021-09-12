@@ -8,7 +8,7 @@
         <el-select v-else-if="formItem.fieldType === 'select'" v-model="values[formItem.fieldCode]" placeholder="请选择">
           <el-option v-for="option in formItem.options" :key="option.value" :label="option.name" :value="option.value"></el-option>
         </el-select>
-        <el-color-picker v-else-if="formItem.fieldType === 'color'" v-model="values[formItem.fieldCode]"></el-color-picker>
+        <el-color-picker v-else-if="formItem.fieldType === 'color'" v-model="values[formItem.fieldCode]" show-alpha></el-color-picker>
       </el-form-item>
     </el-form>
   </div>

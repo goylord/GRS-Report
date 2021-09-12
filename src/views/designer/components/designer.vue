@@ -7,6 +7,7 @@
     @mouseup="stopMove"
     @mouseleave="stopMove"
     @click="selectScreen"
+    :style="screenConfig"
   >
     <widget
       class="widget-component"
@@ -32,9 +33,9 @@ import widget from '@/widgets/index.vue'
 import GRStransition from './transition.vue'
 import { defineComponent, computed, ComputedRef, ref, reactive, onMounted, nextTick, watch } from 'vue'
 import { useStore } from 'vuex'
-import { findWidgetByName } from '@/config/index'
+import { findWidgetByName, screenGlobalConfig } from '@/config/index'
 import { uuid } from '@/utils/utils'
-import { getDefaultValue } from '@/utils/config'
+import { getDefaultValue, getScreenDefaultValue } from '@/utils/config'
 
 export default defineComponent({
   components: {
@@ -56,10 +57,10 @@ export default defineComponent({
     onMounted(() => {
       nextTick(() => {
         const target = document.getElementById('canvas')
-        console.log(target, target?.offsetTop, target?.offsetLeft)
         position.x = target?.offsetLeft || 0
         position.y = target?.offsetTop || 0
       })
+      getScreenDefaultValue(screenGlobalConfig, store)
     })
     const drop = (event: DragEvent) => {
       event.preventDefault();
@@ -112,6 +113,14 @@ export default defineComponent({
       console.log(store.state.uuid)
     })
 
+    const screenConfig: ComputedRef<any> = computed<any>(() => {
+      return {
+        backgroundColor: store.state.screenConfig.backgroundColor,
+        width: store.state.screenConfig.width + 'px',
+        height: store.state.screenConfig.height + 'px',
+      }
+    })
+
     return {
       hoverUUID,
       widgetList,
@@ -122,6 +131,7 @@ export default defineComponent({
       selectWidget,
       selectScreen,
       widgetMoveStart,
+      screenConfig,
     }
   }
 })
@@ -131,6 +141,7 @@ export default defineComponent({
 #canvas {
   height: 100%;
   width: 100%;
+  overflow: hidden;
   position: relative;
   .widget-component {
     position: absolute;

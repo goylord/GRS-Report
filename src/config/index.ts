@@ -1,4 +1,5 @@
-import lineCharts from "./widget/lineCharts";
+import screen from './widget/screen/screen'
+import lineCharts from "./widget/charts/lineCharts";
 
 export const widgets: widgetConfig[] = [lineCharts]
 
@@ -9,3 +10,5 @@ export const findWidgetByName = (widgetName: string): widgetConfig => {
   }
   return widgets[0]
 }
+
+export const screenGlobalConfig = screen

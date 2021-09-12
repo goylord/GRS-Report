@@ -9,8 +9,10 @@
       </el-tabs>
     </el-aside>
     <el-container>
-      <el-header style="border-bottom: 1px solid #ccc;"></el-header>
-      <slot name="container"></slot>
+      <el-header style="border-bottom: 1px solid #eee;height: 40px;"></el-header>
+      <div class="designer-area">
+        <slot name="container"></slot>
+      </div>
     </el-container>
     <el-aside class="aside">
       <el-tabs stretch v-model="rightActiveTab">
@@ -38,6 +40,11 @@ let  rightActiveTab = ref('info')
     border-left: 1px solid #eee;
     height: 100%;
     overflow: hidden auto;
+  }
+  .designer-area {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
   }
 }
 

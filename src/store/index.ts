@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 interface IState {
   widgetList: widgetConfig[];
   widgetConfig: any;
+  screenConfig: any;
   uuid: string;
 }
 export interface setConfig {
@@ -14,6 +15,7 @@ const store = createStore<IState>({
   state: {
     widgetList: [],
     widgetConfig: {},
+    screenConfig: {},
     uuid: ''
   },
   mutations: {
@@ -35,6 +37,9 @@ const store = createStore<IState>({
         state.widgetConfig[props.uuid] = {}
       }
       state.widgetConfig[props.uuid][props.propsName] = props.value
+    },
+    SET_SCREEN_CONFIG(state, props) {
+      state.screenConfig = props
     },
     SET_DEFAULT_WIDGET_CONFIG(state, props:any) {
       state.widgetConfig[props.uuid] = props.defaultValues
