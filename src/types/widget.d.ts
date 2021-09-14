@@ -7,7 +7,7 @@ interface configItem {
   fieldType: string;
   fieldName: string;
   fieldCode: string;
-  defaultValue: string;
+  defaultValue: string|number;
   options?: optionType[];
 }
 

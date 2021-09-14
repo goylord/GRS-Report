@@ -7,8 +7,11 @@
 
 <script setup lang="ts">
 import lineCharts from './charts/lineCharts.vue'
+import barCharts from './charts/barCharts.vue'
+
 const componentMap:any = {
   lineCharts,
+  barCharts,
 }
 import { defineProps, ComputedRef, computed } from 'vue'
 import { useStore } from 'vuex'
