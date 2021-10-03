@@ -1,4 +1,4 @@
-export const modules = import.meta.glob('../views/designer/*.vue')
+export const modules = import.meta.glob('../views/*/*.vue')
 console.log(modules)
 
 export const viewRegister = (url: string) => {

@@ -10,5 +10,10 @@ export default defineConfig({
       '@': path.join(__dirname, 'src')
     }
   },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:8080'
+    }
+  },
   plugins: [vue()]
 })
