@@ -20,6 +20,14 @@ export default<widgetConfig> {
         fieldName: '高度',
         fieldCode: 'height',
         defaultValue: 1080,
+      }, {
+        fieldType: 'number',
+        fieldName: '缩放',
+        fieldCode: 'scale',
+        defaultValue: 1,
+        props: {
+          step: 0.1
+        }
       }]
     }]
 }

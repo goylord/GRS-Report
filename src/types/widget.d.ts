@@ -9,6 +9,7 @@ interface configItem {
   fieldCode: string;
   defaultValue: string|number;
   options?: optionType[];
+  props?: any;
 }
 
 interface configGroup {

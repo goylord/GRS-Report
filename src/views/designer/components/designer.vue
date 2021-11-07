@@ -83,17 +83,21 @@ export default defineComponent({
     }
     const moveWidget = (event: MouseEvent) => {
       if (!isMove.value) return
+      let { x, y } = event
+      const { scale } = store.state.screenConfig
+      x = (x - position.x) / scale + position.x
+      y = (y - position.y) / scale + position.y
       event.preventDefault();
       if (targetElement.value) {
         store.commit('SET_WIDGET_CONFIG', {
           uuid: targetElement.value.dataset.uuid,
           propsName: 'left',
-          value: (event.x - position.x - (targetElement.value.clientWidth / 2))
+          value: (x - position.x - (targetElement.value.clientWidth / 2))
         })
          store.commit('SET_WIDGET_CONFIG', {
           uuid: targetElement.value.dataset.uuid,
           propsName: 'top',
-          value: (event.y - position.y - (targetElement.value.clientHeight / 2))
+          value: (y - position.y - (targetElement.value.clientHeight / 2))
         })
       }
     }
@@ -114,10 +118,15 @@ export default defineComponent({
     })
 
     const screenConfig: ComputedRef<any> = computed<any>(() => {
+      // 计算缩放属性
+      const { width, height, scale } = store.state.screenConfig
+      const scaleX = width * (1 - scale)
+      const scaleY = height * (1 - scale)
       return {
         backgroundColor: store.state.screenConfig.backgroundColor,
-        width: store.state.screenConfig.width + 'px',
-        height: store.state.screenConfig.height + 'px',
+        width: width + 'px',
+        height: height + 'px',
+        transform: `scale(${scale}) translate(${-scaleX}px, ${-scaleY}px)`
       }
     })
 
