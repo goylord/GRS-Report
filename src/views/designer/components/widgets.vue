@@ -7,7 +7,14 @@
 			draggable="true"
 			@dragstart="dragStart($event, widget.widget)"
 		>
-			<span>{{ widget.name }}</span>
+			<div class="widgetItem">
+				<div class="icon">
+					<svg class="icon svg-icon" aria-hidden="true">
+						<use :xlink:href="widget.icon" />
+					</svg>
+				</div>
+				<div class="widgetName">{{ widget.name }}</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -35,11 +42,27 @@ export default defineComponent({
 
 <style lang="less">
 .widgetsContainer {
+	margin-top: -10px;
 	.widget {
 		color: #333;
-		padding: 10px 20px;
+		// padding: 10px 20px;
 		text-align: center;
 		cursor: pointer;
+	}
+	.widgetItem {
+		display: flex;
+		padding-left: 30px;
+		border-bottom: 1px solid #eee;
+		padding: 10px 20px;
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
+		.widgetName {
+			height: 30px;
+			line-height: 30px;
+			margin-left: 30px;
+		}
 	}
 }
 </style>

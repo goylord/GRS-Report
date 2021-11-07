@@ -1,0 +1,142 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "10451635",
+      "name": "饼图",
+      "font_class": "bingtu",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "10451638",
+      "name": "堆叠面积图",
+      "font_class": "duidiemianjitu",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "10451647",
+      "name": "多系列额柱状图",
+      "font_class": "duoxilieezhuzhuangtu",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "10451649",
+      "name": "基本面积图",
+      "font_class": "jibenmianjitu",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "10451650",
+      "name": "玫瑰图",
+      "font_class": "meiguitu",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "10451651",
+      "name": "堆叠柱状图",
+      "font_class": "duidiezhuzhuangtu",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "10451658",
+      "name": "仪表盘",
+      "font_class": "yibiaopan",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "10451661",
+      "name": "折线-多系列柱状图",
+      "font_class": "zhexian-duoxiliezhuzhuangtu",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "10451664",
+      "name": "散点折线图",
+      "font_class": "sandianzhexiantu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "10451666",
+      "name": "基本折线图",
+      "font_class": "jibenzhexiantu",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "10949566",
+      "name": "时间器",
+      "font_class": "shijianqi",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "10949567",
+      "name": "图文列表",
+      "font_class": "tuwenliebiao",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "10949568",
+      "name": "自定义",
+      "font_class": "zidingyi",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "10949569",
+      "name": "文本",
+      "font_class": "wenben",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "10949570",
+      "name": "轮播表格",
+      "font_class": "lunbobiaoge",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "11671968",
+      "name": "表格柱状图",
+      "font_class": "biaogezhuzhuangtu",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "11671969",
+      "name": "词云",
+      "font_class": "ciyun",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "11671973",
+      "name": "甘特图",
+      "font_class": "gantetu",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "11671976",
+      "name": "地图",
+      "font_class": "ditu",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}
